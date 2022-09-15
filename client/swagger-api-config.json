@@ -1,0 +1,6 @@
+{
+	"inputMode": "json", 
+	"inputPath": "./swagger.json", 
+	"outputMode": "default", 
+	"outputPath": "./autoGen" 
+}
