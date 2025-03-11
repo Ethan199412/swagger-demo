@@ -5,6 +5,7 @@ import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
 
+  // 可以去 /api 路由查看文档，去 /api-json 获得 swagger json
   const config = new DocumentBuilder()
     .setTitle('API 文档标题')
     .setDescription('接口文档示例（含 Hello World 接口）')

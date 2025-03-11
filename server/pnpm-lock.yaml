@@ -6,14 +6,20 @@ settings:
 
 dependencies:
   '@nestjs/common':
-    specifier: ^9.0.0
-    version: 9.4.3(reflect-metadata@0.1.14)(rxjs@7.8.2)
+    specifier: ^9.4.3
+    version: 9.4.3(class-validator@0.14.1)(reflect-metadata@0.1.14)(rxjs@7.8.2)
   '@nestjs/core':
-    specifier: ^9.0.0
+    specifier: ^9.4.3
     version: 9.4.3(@nestjs/common@9.4.3)(@nestjs/platform-express@9.4.3)(reflect-metadata@0.1.14)(rxjs@7.8.2)
   '@nestjs/platform-express':
     specifier: ^9.0.0
     version: 9.4.3(@nestjs/common@9.4.3)(@nestjs/core@9.4.3)
+  '@nestjs/swagger':
+    specifier: ^8.1.1
+    version: 8.1.1(@nestjs/common@9.4.3)(@nestjs/core@9.4.3)(class-validator@0.14.1)(reflect-metadata@0.1.14)
+  class-validator:
+    specifier: ^0.14.1
+    version: 0.14.1
   reflect-metadata:
     specifier: ^0.1.13
     version: 0.1.14
@@ -806,6 +812,10 @@ packages:
     resolution: {integrity: sha512-Z7C/xXCiGWsg0KuKsHTKJxbWhpI3Vs5GwLfOean7MGyVFGqdRgBbAjOCh6u4bbjPc/8MJ2pZmK/0DLdCbivLDA==, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/@lukeed/csprng/-/csprng-1.1.0.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2F%40lukeed%2Fcsprng%2F-%2Fcsprng-1.1.0.tgz}
     engines: {node: '>=8'}
 
+  /@microsoft/tsdoc@0.15.1:
+    resolution: {integrity: sha512-4aErSrCR/On/e5G2hDP0wjooqDdauzEbIq8hIkIe5pXV0rtWJZvdCEKL0ykZxex+IxIwBp0eGeV48hQN07dXtw==, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/@microsoft/tsdoc/-/tsdoc-0.15.1.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2F%40microsoft%2Ftsdoc%2F-%2Ftsdoc-0.15.1.tgz}
+    dev: false
+
   /@nestjs/cli@9.5.0:
     resolution: {integrity: sha512-Z7q+3vNsQSG2d2r2Hl/OOj5EpfjVx3OfnJ9+KuAsOdw1sKLm7+Zc6KbhMFTd/eIvfx82ww3Nk72xdmfPYCulWA==, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/@nestjs/cli/-/cli-9.5.0.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2F%40nestjs%2Fcli%2F-%2Fcli-9.5.0.tgz}
     engines: {node: '>= 12.9.0'}
@@ -840,7 +850,7 @@ packages:
       - webpack-cli
     dev: true
 
-  /@nestjs/common@9.4.3(reflect-metadata@0.1.14)(rxjs@7.8.2):
+  /@nestjs/common@9.4.3(class-validator@0.14.1)(reflect-metadata@0.1.14)(rxjs@7.8.2):
     resolution: {integrity: sha512-Gd6D4IaYj01o14Bwv81ukidn4w3bPHCblMUq+SmUmWLyosK+XQmInCS09SbDDZyL8jy86PngtBLTdhJ2bXSUig==, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/@nestjs/common/-/common-9.4.3.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2F%40nestjs%2Fcommon%2F-%2Fcommon-9.4.3.tgz}
     peerDependencies:
       cache-manager: <=5
@@ -856,6 +866,7 @@ packages:
       class-validator:
         optional: true
     dependencies:
+      class-validator: 0.14.1
       iterare: 1.2.1
       reflect-metadata: 0.1.14
       rxjs: 7.8.2
@@ -880,7 +891,7 @@ packages:
       '@nestjs/websockets':
         optional: true
     dependencies:
-      '@nestjs/common': 9.4.3(reflect-metadata@0.1.14)(rxjs@7.8.2)
+      '@nestjs/common': 9.4.3(class-validator@0.14.1)(reflect-metadata@0.1.14)(rxjs@7.8.2)
       '@nestjs/platform-express': 9.4.3(@nestjs/common@9.4.3)(@nestjs/core@9.4.3)
       '@nuxtjs/opencollective': 0.3.2
       fast-safe-stringify: 2.1.1
@@ -893,13 +904,31 @@ packages:
     transitivePeerDependencies:
       - encoding
 
+  /@nestjs/mapped-types@2.0.6(@nestjs/common@9.4.3)(class-validator@0.14.1)(reflect-metadata@0.1.14):
+    resolution: {integrity: sha512-84ze+CPfp1OWdpRi1/lOu59hOhTz38eVzJvRKrg9ykRFwDz+XleKfMsG0gUqNZYFa6v53XYzeD+xItt8uDW7NQ==, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/@nestjs/mapped-types/-/mapped-types-2.0.6.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2F%40nestjs%2Fmapped-types%2F-%2Fmapped-types-2.0.6.tgz}
+    peerDependencies:
+      '@nestjs/common': ^8.0.0 || ^9.0.0 || ^10.0.0
+      class-transformer: ^0.4.0 || ^0.5.0
+      class-validator: ^0.13.0 || ^0.14.0
+      reflect-metadata: ^0.1.12 || ^0.2.0
+    peerDependenciesMeta:
+      class-transformer:
+        optional: true
+      class-validator:
+        optional: true
+    dependencies:
+      '@nestjs/common': 9.4.3(class-validator@0.14.1)(reflect-metadata@0.1.14)(rxjs@7.8.2)
+      class-validator: 0.14.1
+      reflect-metadata: 0.1.14
+    dev: false
+
   /@nestjs/platform-express@9.4.3(@nestjs/common@9.4.3)(@nestjs/core@9.4.3):
     resolution: {integrity: sha512-FpdczWoRSC0zz2dNL9u2AQLXKXRVtq4HgHklAhbL59X0uy+mcxhlSThG7DHzDMkoSnuuHY8ojDVf7mDxk+GtCw==, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/@nestjs/platform-express/-/platform-express-9.4.3.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2F%40nestjs%2Fplatform-express%2F-%2Fplatform-express-9.4.3.tgz}
     peerDependencies:
       '@nestjs/common': ^9.0.0
       '@nestjs/core': ^9.0.0
     dependencies:
-      '@nestjs/common': 9.4.3(reflect-metadata@0.1.14)(rxjs@7.8.2)
+      '@nestjs/common': 9.4.3(class-validator@0.14.1)(reflect-metadata@0.1.14)(rxjs@7.8.2)
       '@nestjs/core': 9.4.3(@nestjs/common@9.4.3)(@nestjs/platform-express@9.4.3)(reflect-metadata@0.1.14)(rxjs@7.8.2)
       body-parser: 1.20.2
       cors: 2.8.5
@@ -937,6 +966,35 @@ packages:
       - chokidar
     dev: true
 
+  /@nestjs/swagger@8.1.1(@nestjs/common@9.4.3)(@nestjs/core@9.4.3)(class-validator@0.14.1)(reflect-metadata@0.1.14):
+    resolution: {integrity: sha512-5Mda7H1DKnhKtlsb0C7PYshcvILv8UFyUotHzxmWh0G65Z21R3LZH/J8wmpnlzL4bmXIfr42YwbEwRxgzpJ5sQ==, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/@nestjs/swagger/-/swagger-8.1.1.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2F%40nestjs%2Fswagger%2F-%2Fswagger-8.1.1.tgz}
+    peerDependencies:
+      '@fastify/static': ^6.0.0 || ^7.0.0
+      '@nestjs/common': ^9.0.0 || ^10.0.0
+      '@nestjs/core': ^9.0.0 || ^10.0.0
+      class-transformer: '*'
+      class-validator: '*'
+      reflect-metadata: ^0.1.12 || ^0.2.0
+    peerDependenciesMeta:
+      '@fastify/static':
+        optional: true
+      class-transformer:
+        optional: true
+      class-validator:
+        optional: true
+    dependencies:
+      '@microsoft/tsdoc': 0.15.1
+      '@nestjs/common': 9.4.3(class-validator@0.14.1)(reflect-metadata@0.1.14)(rxjs@7.8.2)
+      '@nestjs/core': 9.4.3(@nestjs/common@9.4.3)(@nestjs/platform-express@9.4.3)(reflect-metadata@0.1.14)(rxjs@7.8.2)
+      '@nestjs/mapped-types': 2.0.6(@nestjs/common@9.4.3)(class-validator@0.14.1)(reflect-metadata@0.1.14)
+      class-validator: 0.14.1
+      js-yaml: 4.1.0
+      lodash: 4.17.21
+      path-to-regexp: 3.3.0
+      reflect-metadata: 0.1.14
+      swagger-ui-dist: 5.18.2
+    dev: false
+
   /@nestjs/testing@9.4.3(@nestjs/common@9.4.3)(@nestjs/core@9.4.3)(@nestjs/platform-express@9.4.3):
     resolution: {integrity: sha512-LDT8Ai2eKnTzvnPaJwWOK03qTaFap5uHHsJCv6dL0uKWk6hyF9jms8DjyVaGsaujCaXDG8izl1mDEER0OmxaZA==, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/@nestjs/testing/-/testing-9.4.3.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2F%40nestjs%2Ftesting%2F-%2Ftesting-9.4.3.tgz}
     peerDependencies:
@@ -950,7 +1008,7 @@ packages:
       '@nestjs/platform-express':
         optional: true
     dependencies:
-      '@nestjs/common': 9.4.3(reflect-metadata@0.1.14)(rxjs@7.8.2)
+      '@nestjs/common': 9.4.3(class-validator@0.14.1)(reflect-metadata@0.1.14)(rxjs@7.8.2)
       '@nestjs/core': 9.4.3(@nestjs/common@9.4.3)(@nestjs/platform-express@9.4.3)(reflect-metadata@0.1.14)(rxjs@7.8.2)
       '@nestjs/platform-express': 9.4.3(@nestjs/common@9.4.3)(@nestjs/core@9.4.3)
       tslib: 2.5.3
@@ -987,6 +1045,11 @@ packages:
       node-fetch: 2.7.0
     transitivePeerDependencies:
       - encoding
+
+  /@scarf/scarf@1.4.0:
+    resolution: {integrity: sha512-xxeapPiUXdZAE3che6f3xogoJPeZgig6omHEy1rIY5WVsB3H2BHNnZH+gHG6x91SCWyQCzWGsuL2Hh3ClO5/qQ==, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/@scarf/scarf/-/scarf-1.4.0.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2F%40scarf%2Fscarf%2F-%2Fscarf-1.4.0.tgz}
+    requiresBuild: true
+    dev: false
 
   /@sinclair/typebox@0.27.8:
     resolution: {integrity: sha512-+Fj43pSMwJs4KRrH/938Uf+uAELIgVBmQzg/q1YG10djyfA3TnrU8N8XzqCh/okZdszqBQTZf96idMfE5lnwTA==, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/@sinclair/typebox/-/typebox-0.27.8.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2F%40sinclair%2Ftypebox%2F-%2Ftypebox-0.27.8.tgz}
@@ -1200,6 +1263,9 @@ packages:
     dependencies:
       '@types/superagent': 8.1.9
     dev: true
+
+  /@types/validator@13.12.2:
+    resolution: {integrity: sha512-6SlHBzUW8Jhf3liqrGGXyTJSIFe4nqlJ5A5KaMZ2l/vbM3Wh3KSybots/wfWVzNLK4D1NZluDlSQIbIEPx6oyA==, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/@types/validator/-/validator-13.12.2.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2F%40types%2Fvalidator%2F-%2Fvalidator-13.12.2.tgz}
 
   /@types/yargs-parser@21.0.3:
     resolution: {integrity: sha512-I4q9QU9MQv4oEOz4tAHJtNz1cwuLxn2F3xcc2iV5WdqLPpUnj30aUuxt1mAxYTG+oe8CZMV/+6rU4S4gRDzqtQ==, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/@types/yargs-parser/-/yargs-parser-21.0.3.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2F%40types%2Fyargs-parser%2F-%2Fyargs-parser-21.0.3.tgz}
@@ -1613,7 +1679,6 @@ packages:
 
   /argparse@2.0.1:
     resolution: {integrity: sha512-8+9WqebbFzpX9OR+Wa6O29asIogeRMzcGtAINdpMHHyAg10f05aSFVBbcEqGf/PXw1EjAZ+q2/bEBg3DvurK3Q==, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/argparse/-/argparse-2.0.1.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fargparse%2F-%2Fargparse-2.0.1.tgz}
-    dev: true
 
   /array-flatten@1.1.1:
     resolution: {integrity: sha512-PCVAQswWemu6UdxsDFFX/+gVeYqKAod3D3UVm91jHwynguOwAvYPhx8nNlM++NqRcK6CxxpUafjmhIdKiHibqg==, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/array-flatten/-/array-flatten-1.1.1.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Farray-flatten%2F-%2Farray-flatten-1.1.1.tgz}
@@ -1906,6 +1971,13 @@ packages:
   /cjs-module-lexer@1.4.3:
     resolution: {integrity: sha512-9z8TZaGM1pfswYeXrUpzPrkx8UnWYdhJclsiYMm6x/w5+nN+8Tf/LnAgfLGQCm59qAOxU8WwHEq2vNwF6i4j+Q==, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/cjs-module-lexer/-/cjs-module-lexer-1.4.3.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fcjs-module-lexer%2F-%2Fcjs-module-lexer-1.4.3.tgz}
     dev: true
+
+  /class-validator@0.14.1:
+    resolution: {integrity: sha512-2VEG9JICxIqTpoK1eMzZqaV+u/EiwEJkMGzTrZf6sU/fwsnOITVgYJ8yojSy6CaXtO9V0Cc6ZQZ8h8m4UBuLwQ==, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/class-validator/-/class-validator-0.14.1.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fclass-validator%2F-%2Fclass-validator-0.14.1.tgz}
+    dependencies:
+      '@types/validator': 13.12.2
+      libphonenumber-js: 1.12.5
+      validator: 13.12.0
 
   /cli-cursor@3.1.0:
     resolution: {integrity: sha512-I/zHAwsKf9FqGoXM4WWRACob9+SNukZTd94DWF57E4toouRulbCxcUh6RKUEOQlYTHJnzkPMySvPNaaSLNfLZw==, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/cli-cursor/-/cli-cursor-3.1.0.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fcli-cursor%2F-%2Fcli-cursor-3.1.0.tgz}
@@ -3547,7 +3619,6 @@ packages:
     hasBin: true
     dependencies:
       argparse: 2.0.1
-    dev: true
 
   /jsesc@3.1.0:
     resolution: {integrity: sha512-/sM3dO2FOzXjKQhJuo0Q173wf2KOo8t4I8vHy6lF9poUp7bKT0/NHE8fPX23PwfhnykfqnC2xRxOnVw5XuGIaA==, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/jsesc/-/jsesc-3.1.0.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fjsesc%2F-%2Fjsesc-3.1.0.tgz}
@@ -3617,6 +3688,9 @@ packages:
       type-check: 0.4.0
     dev: true
 
+  /libphonenumber-js@1.12.5:
+    resolution: {integrity: sha512-DOjiaVjjSmap12ztyb4QgoFmUe/GbgnEXHu+R7iowk0lzDIjScvPAm8cK9RYTEobbRb0OPlwlZUGTTJPJg13Kw==, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/libphonenumber-js/-/libphonenumber-js-1.12.5.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Flibphonenumber-js%2F-%2Flibphonenumber-js-1.12.5.tgz}
+
   /lines-and-columns@1.2.4:
     resolution: {integrity: sha512-7ylylesZQ/PV29jhEDl3Ufjo6ZX7gCqJr5F7PKrqc93v7fzSymt1BpwEU8nAUXs8qzzvqhbjhK5QZg6Mt/HkBg==, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/lines-and-columns/-/lines-and-columns-1.2.4.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Flines-and-columns%2F-%2Flines-and-columns-1.2.4.tgz}
     dev: true
@@ -3650,7 +3724,6 @@ packages:
 
   /lodash@4.17.21:
     resolution: {integrity: sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/lodash/-/lodash-4.17.21.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Flodash%2F-%2Flodash-4.17.21.tgz}
-    dev: true
 
   /log-symbols@4.1.0:
     resolution: {integrity: sha512-8XPvpAA8uyhfteu8pIvQxpJZ7SYYdpUivZpGy6sFsBuKRY/7rQGavedeB8aK+Zkyq6upMFVL/9AW6vOYzfRyLg==, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/log-symbols/-/log-symbols-4.1.0.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Flog-symbols%2F-%2Flog-symbols-4.1.0.tgz}
@@ -4028,6 +4101,10 @@ packages:
 
   /path-to-regexp@3.2.0:
     resolution: {integrity: sha512-jczvQbCUS7XmS7o+y1aEO9OBVFeZBQ1MDSEqmO7xSoPgOPoowY/SxLpZ6Vh97/8qHZOteiCKb7gkG9gA2ZUxJA==, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/path-to-regexp/-/path-to-regexp-3.2.0.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fpath-to-regexp%2F-%2Fpath-to-regexp-3.2.0.tgz}
+
+  /path-to-regexp@3.3.0:
+    resolution: {integrity: sha512-qyCH421YQPS2WFDxDjftfc1ZR5WKQzVzqsp4n9M2kQhVOo/ByahFoUNJfl58kOcEGfQ//7weFTDhm+ss8Ecxgw==, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/path-to-regexp/-/path-to-regexp-3.3.0.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fpath-to-regexp%2F-%2Fpath-to-regexp-3.3.0.tgz}
+    dev: false
 
   /path-type@4.0.0:
     resolution: {integrity: sha512-gDKb8aZMDeD/tZWs9P6+q0J9Mwkdl6xMV8TjnGP3qJVJ06bdMgkbBlLU8IdfOsIsFz2BW1rNVT3XuNEl8zPAvw==, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/path-type/-/path-type-4.0.0.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fpath-type%2F-%2Fpath-type-4.0.0.tgz}
@@ -4595,6 +4672,12 @@ packages:
     engines: {node: '>= 0.4'}
     dev: true
 
+  /swagger-ui-dist@5.18.2:
+    resolution: {integrity: sha512-J+y4mCw/zXh1FOj5wGJvnAajq6XgHOyywsa9yITmwxIlJbMqITq3gYRZHaeqLVH/eV/HOPphE6NjF+nbSNC5Zw==, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/swagger-ui-dist/-/swagger-ui-dist-5.18.2.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fswagger-ui-dist%2F-%2Fswagger-ui-dist-5.18.2.tgz}
+    dependencies:
+      '@scarf/scarf': 1.4.0
+    dev: false
+
   /symbol-observable@4.0.0:
     resolution: {integrity: sha512-b19dMThMV4HVFynSAM1++gBHAbk2Tc/osgLIBZMKsyqh34jb2e8Os7T6ZW/Bt3pJFdBTd2JwAnAAEQV7rSNvcQ==, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/symbol-observable/-/symbol-observable-4.0.0.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fsymbol-observable%2F-%2Fsymbol-observable-4.0.0.tgz}
     engines: {node: '>=0.10'}
@@ -4925,6 +5008,10 @@ packages:
       '@types/istanbul-lib-coverage': 2.0.6
       convert-source-map: 2.0.0
     dev: true
+
+  /validator@13.12.0:
+    resolution: {integrity: sha512-c1Q0mCiPlgdTVVVIJIrBuxNicYE+t/7oKeI9MWLj3fh/uq2Pxh/3eeWbVZ4OcGW1TUf53At0njHw5SMdA3tmMg==, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/validator/-/validator-13.12.0.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fvalidator%2F-%2Fvalidator-13.12.0.tgz}
+    engines: {node: '>= 0.10'}
 
   /vary@1.1.2:
     resolution: {integrity: sha512-BNGbWLfd0eUPabhkXUVm0j8uuvREyTh5ovRa/dyow/BqAbZJyC+5fU+IzQOzmAKzYqYRAISoRhdQr3eIZ/PXqg==, tarball: http://artifactory.intra.xiaojukeji.com/artifactory/api/npm/npm/vary/-/vary-1.1.2.tgz?dl=https%3A%2F%2Fregistry.npmmirror.com%2Fvary%2F-%2Fvary-1.1.2.tgz}
