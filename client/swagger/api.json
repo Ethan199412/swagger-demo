@@ -64,11 +64,15 @@
               "description": "用户姓名（2-20字符）",
               "minLength": 2,
               "maxLength": 20
+            },
+            "age": {
+              "type": "number"
             }
           },
           "required": [
             "email",
-            "username"
+            "username",
+            "age"
           ]
         },
         "HelloWorldResDto": {

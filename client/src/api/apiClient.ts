@@ -22,6 +22,7 @@ export interface HelloWorldReqDto {
    * @example "张三"
    */
   username: string;
+  age: number;
 }
 
 export interface HelloWorldResDto {

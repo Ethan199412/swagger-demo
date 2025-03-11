@@ -20,7 +20,7 @@ class TestDiff extends React.Component<any, any> {
   }
 
   componentDidMount(): void {
-    helloWorldApi({ email: "123", username: "123" }).then((res) => {
+    helloWorldApi({ email: "123", username: "123", age: 10 }).then((res) => {
       console.log("[p1.0] res", res);
     });
   }

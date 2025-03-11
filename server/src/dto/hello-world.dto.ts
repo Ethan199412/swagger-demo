@@ -1,5 +1,5 @@
 import { ApiProperty } from '@nestjs/swagger';
-import { IsString, IsEmail, IsNotEmpty } from 'class-validator';
+import { IsString, IsEmail, IsNotEmpty, IsNumber } from 'class-validator';
 
 export class HelloWorldReqDto {
   @ApiProperty({
@@ -20,6 +20,10 @@ export class HelloWorldReqDto {
   @IsString()
   @IsNotEmpty()
   username: string;
+
+  @ApiProperty()
+  @IsNumber()
+  age: number;
 }
 
 export class HelloWorldResDto {
