@@ -1,0 +1,89 @@
+{
+    "openapi": "3.0.0",
+    "paths": {
+      "/hello": {
+        "post": {
+          "operationId": "AppController_getHello",
+          "parameters": [],
+          "requestBody": {
+            "required": true,
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HelloWorldReqDto"
+                }
+              }
+            }
+          },
+          "responses": {
+            "201": {
+              "description": "hello world",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/HelloWorldResDto"
+                  }
+                }
+              }
+            }
+          },
+          "tags": [
+            "App"
+          ]
+        }
+      }
+    },
+    "info": {
+      "title": "API 文档标题",
+      "description": "接口文档示例（含 Hello World 接口）",
+      "version": "1.0",
+      "contact": {
+  
+      }
+    },
+    "tags": [
+      {
+        "name": "默认接口",
+        "description": ""
+      }
+    ],
+    "servers": [],
+    "components": {
+      "schemas": {
+        "HelloWorldReqDto": {
+          "type": "object",
+          "properties": {
+            "email": {
+              "type": "string",
+              "example": "user@example.com",
+              "description": "用户邮箱（唯一标识）"
+            },
+            "username": {
+              "type": "string",
+              "example": "张三",
+              "description": "用户姓名（2-20字符）",
+              "minLength": 2,
+              "maxLength": 20
+            }
+          },
+          "required": [
+            "email",
+            "username"
+          ]
+        },
+        "HelloWorldResDto": {
+          "type": "object",
+          "properties": {
+            "message": {
+              "type": "string",
+              "example": "Hello World!",
+              "description": "返回信息"
+            }
+          },
+          "required": [
+            "message"
+          ]
+        }
+      }
+    }
+  }
